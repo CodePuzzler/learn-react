@@ -2,9 +2,9 @@ import Todo from './components/Todo'
 
 function App() {
   return (
-    <div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center relative overflow-hidden sm:py-12">
-      <div class="relative px-6 pt-10 pb-8 bg-white shadow-xl ring-1 ring-gray-900/5 sm:max-w-lg sm:mx-auto sm:rounded-lg sm:px-10">
-        <div class="max-w-md mx-auto">
+    <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center relative overflow-hidden sm:py-12">
+      <div className="relative px-6 pt-10 pb-8 bg-white shadow-xl ring-1 ring-gray-900/5 sm:max-w-lg sm:mx-auto sm:rounded-lg sm:px-10">
+        <div className="max-w-md mx-auto">
           <h2 className="text-xl font-semibold border-b-2 pb-4 text-slate-900 text-center">
             My Todos
           </h2>

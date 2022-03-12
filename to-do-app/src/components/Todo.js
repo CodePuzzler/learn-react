@@ -1,4 +1,19 @@
+import { useState } from 'react'
+
+import Modal from './Modal'
+import Backdrop from './Backdrop'
+
 function Todo(props) {
+  const [showModal, setShowModal] = useState()
+
+  function showModalHandler() {
+    setShowModal(true)
+  }
+
+  function closeModalHandler() {
+    setShowModal(false)
+  }
+
   return (
     <div className="flex items-start space-x-6 p-6">
       <div className="min-w-0 relative flex-auto">
@@ -10,7 +25,8 @@ function Todo(props) {
             <dd>
               <button
                 type="button"
-                class="bg-red-600 text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg"
+                onClick={showModalHandler}
+                className="bg-red-600 text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg"
               >
                 Delete
               </button>
@@ -18,6 +34,8 @@ function Todo(props) {
           </div>
         </dl>
       </div>
+      {showModal && <Backdrop onClick={closeModalHandler} />}
+      {showModal && <Modal text="Are you sure?" onClose={closeModalHandler} />}
     </div>
   )
 }
